@@ -1,0 +1,4 @@
+/target
+*.wad.client
+*.wad
+hashes.game.txt
