@@ -48,26 +48,9 @@ fn parse_bin(data: Box<[u8]>, files_to_extract: &mut HashSet<u64>) {
             .map(|dep| xxh64(dep.as_bytes(), 0)),
     );
 
-    // for (_hash, obj) in bin.objects.iter(){
-    //     for (key, prop) in obj.properties.iter() {
-    //         if key == &fnv(&"healthBarData".to_lowercase()) {
-    //             if let PropertyValueEnum::Embedded(embedded) = &prop.value {
-    //                 for (key, prop) in embedded.0.properties.iter() {
-    //                     if key == &fnv(&"unitHealthBarStyle".to_lowercase()) {
-    //                         if let PropertyValueEnum::U8(val) = &prop.value {
-    //                             println!("unitHealthBarStyle value: {}", val.0);
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+
     files_to_extract.extend(get_all_strings_with_extensions(&bin));
-    // println!("{}",get_all_strings_with_extensions(&bin).len());
-    // get_all_strings_with_extensions(&bin)
-    //     .iter()
-    //     .for_each(|s| println!("String with extension: {}", s));
+    
 }
 
 pub struct StructValue {
